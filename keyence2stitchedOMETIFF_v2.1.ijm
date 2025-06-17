@@ -1,8 +1,8 @@
 // keyence tile images transform to stitched ome-tif
 // Show dialog to select tile image directory
 close("*");
-showMessageWithCancel("keyence2stitchedOMETIFF", "Select a Directory within the Keyence tile images. Press OK to proceed.");
-openDir = getDirectory("Select a Directory within the Keyence tile images");
+showMessageWithCancel("keyence2stitchedOMETIFF", "Select a Directory of the the Keyence tile images. Press OK to proceed.");
+openDir = getDirectory("Directory of the Keyence tile images");
 
 // get channel number
 ALLimagelist = getFileList(openDir); 
@@ -43,7 +43,7 @@ for (i = 0; i < (tile_count); i++) {
 // Show dialog
 if (ch_count == 1) {
 	Dialog.create("Information");
-	Dialog.addDirectory("Select a output folder", File.getDirectory(openDir));
+	Dialog.addDirectory("Output folder", File.getDirectory(openDir));
 	Dialog.addString("Sample name", tile_sample, 25);
 	Dialog.setInsets(-8, 200, 0);
 	Dialog.addMessage("Do not include space or under score. (\" \" or \"_\")", 11);
@@ -90,7 +90,7 @@ if (ch_count == 1) {
 	}
 }else {
 	Dialog.create("Information");
-	Dialog.addDirectory("Select a output folder", File.getDirectory(openDir));
+	Dialog.addDirectory("Output folder", File.getDirectory(openDir));
 	Dialog.addString("Sample name", tile_sample, 25);
 	Dialog.setInsets(-8, 200, 0);
 	Dialog.addMessage("Do not include space or under score. (\" \" or \"_\")", 11);

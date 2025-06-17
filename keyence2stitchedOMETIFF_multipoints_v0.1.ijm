@@ -1,8 +1,8 @@
 // keyence tile images transform to stitched ome-tif
 // Show dialog to select tile image directory
 close("*");
-showMessageWithCancel("keyence2stitchedOMETIFF", "Select a Directory within Keyence multi-poisnts tile images. Press OK to proceed.");
-multiopenDir = getDirectory("Select a Directory within Keyence multi-poisnts tile images");
+showMessageWithCancel("keyence2stitchedOMETIFF", "Select a Directory of the Keyence multi-poisnts tile images. Press OK to proceed.");
+multiopenDir = getDirectory("Directory of the Keyence multi-poisnts tile images");
 
 // get points number
 pointlist = getFileList(multiopenDir);
@@ -54,7 +54,7 @@ for (i = 0; i < (tile_count); i++) {
 // Show dialog
 if (ch_count == 1) {
 	Dialog.create("Information");
-	Dialog.addDirectory("Select a output folder", File.getDirectory(multiopenDir + pointlist[0]));
+	Dialog.addDirectory("Output folder", File.getDirectory(multiopenDir));
 	Dialog.addString("Sample name", tile_sample, 25);
 	Dialog.setInsets(-8, 200, 0);
 	Dialog.addMessage("Do not include space or under score. (\" \" or \"_\")", 11);
@@ -101,7 +101,7 @@ if (ch_count == 1) {
 	}
 }else {
 	Dialog.create("Information");
-	Dialog.addDirectory("Select a output folder", File.getDirectory(multiopenDir + pointlist[0]));
+	Dialog.addDirectory("Output folder", File.getDirectory(multiopenDir));
 	Dialog.addString("Sample name", tile_sample, 25);
 	Dialog.setInsets(-8, 200, 0);
 	Dialog.addMessage("Do not include space or under score. (\" \" or \"_\")", 11);
@@ -227,8 +227,8 @@ if (image_format == "HE") {
 		openDir = multiopenDir + pointlist[i];
 		pointname = samplename + "_" + pointlist2[i];
 		
-		run("keyence2stitchedOMETIFF v1.1", "select=[" + openDir + "] select=[" + saveDir + "] sample=[" +
-			 pointname + "] select_1=[" + magnif + "] select_2=[" + resolution + "] select_3=[" + image_format + 
+		run("keyence2stitchedOMETIFF v1.1", "directory=[" + openDir + "] output=[" + saveDir + "] sample=[" +
+			 pointname + "] select=[" + magnif + "] select_0=[" + resolution + "] select_1=[" + image_format + 
 			 "] grid=[" + grid_x + "] grid_0=[" + grid_y + "]");
 			 
 		close("*");
@@ -258,15 +258,14 @@ if (image_format == "HE") {
 		}
 
 		
-		run("keyence2stitchedOMETIFF v2.1", "select=[" + openDir + "] select=[" + saveDir + "] sample=[" +
-			 pointname + "] select_1=[" + magnif + "] select_2=[" + resolution + 
+		run("keyence2stitchedOMETIFF v2.1", "directory=[" + openDir + "] output=[" + saveDir + "] sample=[" +
+			 pointname + "] select=[" + magnif + "] select_0=[" + resolution + 
 			 "] dna=[" + DNAch + "] cycle=[" + cycl_no + 
 			 "] grid=[" + grid_x + "] grid_0=[" + grid_y + 
 			 "] " + chstring);
 			 
 		close("*");
 }
-
 
 
 //functions---------------------
