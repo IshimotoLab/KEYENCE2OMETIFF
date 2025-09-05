@@ -7,4 +7,5 @@ These scripts help to convert KEYENCE tif images into channel stacked OME-TIFF i
 You need to install Fiji and `BigStitcher` plugin.
 
 - `keyence2stitchedOMETIFF_v1.1.ijm` use `Grid/Collection Stitching` for stitching. Recommended to use HE image. [How to use](https://github.com/IshimotoLab/KEYENCE2OMETIFF/blob/main/files/How_to_use_keyence2stitchedOMETIFF_v1.0.pdf)
-- `keyence2stitchedOMETIFF_v2.1.ijm` use `BigStitcher` for stitching. Recommended to use fluorescence image.
+- `keyence2stitchedOMETIFF_v2.2.ijm` use `BigStitcher` for stitching. Recommended to use fluorescence image.
+
