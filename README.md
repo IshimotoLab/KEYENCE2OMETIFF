@@ -8,4 +8,5 @@ You need to install Fiji and `BigStitcher` plugin.
 
 - `keyence2stitchedOMETIFF_v1.1.ijm` use `Grid/Collection Stitching` for stitching. Recommended to use HE image. [How to use](https://github.com/IshimotoLab/KEYENCE2OMETIFF/blob/main/files/How_to_use_keyence2stitchedOMETIFF_v1.0.pdf)
 - `keyence2stitchedOMETIFF_v2.2.ijm` use `BigStitcher` for stitching. Recommended to use fluorescence image.
+- `xml2stitchedOMETIFF_v1.2.ijm` is used to create a stitched image from an xml file saved by `BigStitcher`. [How to use](https://github.com/IshimotoLab/KEYENCE2OMETIFF/blob/main/files/How_to_use_xml2stitchedOMETIFF_v1.2.pdf)
 
